@@ -15,7 +15,7 @@ dotenv.config();
 const app = express();
 app.use(cors()); 
 app.use(express.json());
-const PORT = 5050 || process.env.port;
+const PORT = process.env.port || 5050 ;
 mongoose.connect(process.env.DBkey);
 
 // Swagger setup
