@@ -6,11 +6,14 @@ import { protect } from './utility/auth.js';
 import dotenv from 'dotenv';
 import publicCarRouter from './controllers/publicCarController.js'
 import swaggerJSDoc from 'swagger-jsdoc';
+import cors from 'cors';
 import swaggerUi from 'swagger-ui-express';
+
 
 dotenv.config();
 
 const app = express();
+app.use(cors()); 
 app.use(express.json());
 const PORT = 5050 || process.env.port;
 mongoose.connect(process.env.DBkey);
